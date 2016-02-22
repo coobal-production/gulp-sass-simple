@@ -1,0 +1,34 @@
+// =====================================================
+//
+// TOPページ Style
+//
+// =====================================================
+
+/* top_page
+--------------------------------------------- */
+#top_page {
+  @if $type == all {// set All Devices and SmartPhone
+    @include rds;
+    @include grad;
+    @include ib(top);
+    @include hr;
+    @include box;
+    @include bs;
+    @include trf( rotate(1deg) );
+    @include trs;
+    display: flex;
+    opacity: .8;
+    user-select: none;
+    appearance: none;
+  } @else if $type == tab {// set Tablet
+  } @else if $type == pc {// set PC
+  }// @if
+}// #top_page
+
+.test {
+  @if $type == all {// set All Devices and SmartPhone
+    margin: 10px;
+  } @else if $type == tab {// set Tablet
+  } @else if $type == pc {// set PC
+  }// @if
+}

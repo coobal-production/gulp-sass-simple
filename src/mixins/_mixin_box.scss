@@ -1,0 +1,12 @@
+// box style
+//--------------------------------------------- */
+
+// box-sizing
+@mixin box($type: border-box) {
+  box-sizing: $type;
+}
+
+// box-shadow
+@mixin bs($param: 0px 0px 5px #CCC) {
+  box-shadow: $param;
+}

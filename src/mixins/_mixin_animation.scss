@@ -1,0 +1,22 @@
+// animation
+//--------------------------------------------- */
+
+// transform
+@mixin trf( $param ){
+  transform: $param;
+}
+
+// transition
+@mixin trs( $type: all, $time: 1, $effect: ease-out ){
+  transition: $type ($time + s) $effect;
+}
+
+@mixin keyframes($name){
+  @keyframes $name {
+    @content;
+  }
+}
+
+@mixin animation($name, $duration: .5, $timing: null, $delay: null, $count: null, $direction: null) {
+  #{animation}: $name ($duration + s) $timing $delay $count $direction;
+}

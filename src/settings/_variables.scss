@@ -1,0 +1,62 @@
+// =====================================================
+//
+// VARIABLES
+//
+// =====================================================
+
+// Site config
+// ---------------------------------------------
+
+// Browser support
+$support_ie6: false;
+$support_ie7: false;
+$support_ie8: false;
+$support_ie9: true;
+@if (not $support_ie8) and $support_ie9 {
+  $experimental-support-for-svg: true;
+}
+
+// Css config
+// ---------------------------------------------
+
+// Assign Site Width
+$ct_margin: 40px;
+$main_width: 760px;
+$side_width: 200px;
+$base_width: $main_width + $side_width + $ct_margin;
+
+// Use sprite
+$use_sprite: false;
+$use_sprite_retina: false;
+
+// Use utility css
+$use_css_utility: true;
+  // Use spacing classes
+  $use_space_class: true;
+  // Use text-style classes
+  $use_text_class: true;
+  // Use layout-style classes
+  $use_layout_class: true;
+
+
+// Font
+// ---------------------------------------------
+
+// Base font-size
+$font_size: 16;
+
+// Base font-family
+$font_family: 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+
+
+// Element
+// ---------------------------------------------
+
+// Base line-height
+$line_height: 1.6;
+
+// element margin
+$base_mg: 10px;
+
+// element padding
+$base_pd: 10px;

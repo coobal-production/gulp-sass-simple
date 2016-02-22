@@ -1,0 +1,78 @@
+@if $use_css_utility {
+/* ===========================================
+ Utility
+=========================================== */
+
+  // 余白調整用クラス
+  @if use_space_class {
+    @for $i from 0 through 10 {
+      .mt#{$i * 5} { margin-top: 5px * $i !important; }
+      .mr#{$i * 5} { margin-right: 5px * $i !important; }
+      .mb#{$i * 5} { margin-bottom: 5px * $i !important; }
+      .ml#{$i * 5} { margin-left: 5px * $i !important; }
+    }
+    @for $i from 0 through 10 {
+      .pt#{$i * 5} { padding-top: 5px * $i !important; }
+      .pr#{$i * 5} { padding-right: 5px * $i !important; }
+      .pb#{$i * 5} { padding-bottom: 5px * $i !important; }
+      .pl#{$i * 5} { padding-left: 5px * $i !important; }
+    }
+  }
+
+  // テキスト装飾用クラス
+  @if use_text_class {
+    .t_del { text-decoration: line-through; }
+    .t_italic { font-style: italic; }
+    .t_normal { font-weight: normal; }
+    .t_bold { font-weight: bold; }
+    .t_xx_small { font-size: 60%; }
+    .t_x_small { font-size: 75%; }
+    .t_small { font-size: 88.88%; }
+    .t_large { font-size: 120%; }
+    .t_x_large { font-size: 150%; }
+    .t_xx_large { font-size: 200%; }
+  }
+
+  // レイアウト調整用クラス
+  @if use_layout_class {
+    .l_indent { text-indent: 1em; }
+    .l_left { text-align: left; }
+    .l_right { text-align: right; }
+    .l_center { text-align: center; }
+    .l_vt { vertical-align: top; }
+    .l_vm { vertical-align: middle; }
+    .l_vb { vertical-align: bottom; }
+    .l_fl_l { float: left; }
+    .l_fl_r { float: right; }
+    .fl_box {
+      @include cf;
+      .box_item { float: left; }
+      .box_item_rv { float: right; }
+    }// .fl_box
+    .cf {
+      &:before, &:after { content: ""; display: table; }
+      &:after { clear: both; }
+      *zoom: 1;
+    }// .cf
+    .l_clear, .l_clear:after { clear: both; }
+    .l_clear_l, .l_clear_l:after { clear: left; }
+    .l_clear_r, .l_clear_r:after { clear: right; }
+  }
+
+  // movie レスポンシブ対応
+  .movie_wp {
+    position: relative;
+    margin-bottom: 5em;
+    padding-top: 69px;
+    padding-bottom: 50%;
+    overflow: hidden;
+  }
+  .movie_wp iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+}

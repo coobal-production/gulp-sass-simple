@@ -1,0 +1,51 @@
+// text
+//--------------------------------------------- */
+
+// font-size
+@mixin fs( $size: 24, $base: 16 ){
+  @if $support_ie8 {
+    font-size: $size + px;
+  }
+  font-size: ($size / $base) * 1rem;
+}
+
+// text-shadow
+@mixin ts( $param: 0 1px 0 rgba(#000, .2) ){
+  text-shadow: $param;
+}
+
+// text-shadow black
+@mixin tsb( $opacity: .4 ){
+  @include ts( 0 1px 0 rgba(#000, $opacity) );
+}
+
+// text-shadow white
+@mixin tsw( $opacity: 1 ){
+  @include ts( 0 1px 0 rgba(#FFF, $opacity) );
+}
+
+// ellipsis
+@mixin elps {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+// link
+@mixin tl(
+    $base: $link_color_primary,
+    $hover: $link_color_hover,
+    $visited: $link_color_visited,
+    $active: $link_color_active
+  ) {
+  color: $base;
+  &:hover {
+    color: $hover;
+  }// &:hover
+  &:visited {
+    color: $visited;
+  }// &:visited
+  &:active {
+    color: $active;
+  }// &:active
+}// .tl

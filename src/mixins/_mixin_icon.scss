@@ -1,0 +1,107 @@
+// icon style
+//--------------------------------------------- */
+
+// circle
+@mixin circle($size){
+  width: $size + px;
+  height: $size + px;
+  text-align: center;
+  @include border-radius(100%);
+}
+
+// arrow
+@mixin arw_default($direction: right, $color: #000, $reverse: normal, $size1: 6, $size2: 6){
+  $set1: left;
+  $set2: top;
+  $set3: bottom;
+  @if $reverse == "square" {
+    $size2: $size1;
+  } @elseif $reverse == "manual" {
+    $size2: $size2;
+  } @elseif $reverse == "normal" {
+    $size2: (($size1 * 4) / 3) / 2;
+  } @else {
+    $size2: (($size1 * 3) / 4) / 2;
+  }
+  @if $direction == left {
+    $set1: right;
+    $set2: top;
+    $set3: bottom;
+  } @elseif $direction == top {
+    $set1: bottom;
+    $set2: right;
+    $set3: left;
+  } @elseif $direction == bottom {
+    $set1: top;
+    $set2: right;
+    $set3: left;
+  } @else {
+    $set1: left;
+    $set2: top;
+    $set3: bottom;
+  }
+  //$size: round($size / 2);
+  width: 0;
+  height: 0;
+  border: $size1 + px solid transparent;
+  border-#{$set1}-color: $color;
+  border-#{$set2}-width: $size2 + px;
+  border-#{$set3}-width: $size2 + px;
+}
+@mixin arw_t($size: 10, $color: #000, $pos: 0, $space: 10){
+  position: relative;
+  padding-top: $space + px;
+  &::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: $pos;
+    right: 0;
+    left: 0;
+    margin: ($size * -1 + px) auto auto;
+    @include arw_default(
+      $direction: top,
+      $color: $color,
+      $reverse: normal,
+      $size1: $size
+    );
+  }
+}
+@mixin arw_r($size: 10, $color: #000, $pos: 0, $space: 10){
+  position: relative;
+  padding-right: $space + px;
+  &::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: $pos;
+    bottom: 0;
+    margin: auto ($size * -1 + px) auto auto;
+    @include arw_default(
+      $direction: right,
+      $color: $color,
+      $reverse: normal,
+      $size1: $size
+    );
+  }
+}
+@mixin arw_l($size: 10, $color: #000, $pos: 0, $space: 10){
+  position: relative;
+  padding-left: $space + px;
+  &::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: $pos;
+    bottom: 0;
+    margin: auto auto auto ($size * -1 + px);
+    @include arw_default(
+      $direction: right,
+      $color: $color,
+      $reverse: normal,
+      $size1: $size
+    );
+  }
+}

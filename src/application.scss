@@ -1,0 +1,112 @@
+@charset "utf-8";
+/*!
+* (c) 2014 Coobal Inc.
+* @project : example.com
+* @guideline : http://coding-manual.s-rep.net/guideline/
+* @version : 1
+* @author: Coobal Production-Unit yuking11
+*/
+
+// ===========================================
+// サイト設定 変数一覧
+// ===========================================
+@import "settings/variables";
+
+// ===========================================
+// カラー関連の設定
+// ===========================================
+@import "settings/colors";
+
+// ===========================================
+// Mix-in
+// ===========================================
+@import "mixins/mixins";
+
+// ===========================================
+// デフォルトCSS
+// ===========================================
+@import "base/reset";// HTML5 doctor reset css
+@import "base/default";
+
+// ===========================================
+// プラグイン等
+// ===========================================
+// @import "vendor/vendor";
+
+// ===========================================
+// Modules
+// ===========================================
+// @import "modules/iconfont";// iconfont
+// @import "modules/sprites";// Sprite
+// @if $use_sprite {
+//   @include sprites($spritesheet-sprites);
+// } @elseif $use_sprite_retina {
+//   @include retina-sprites($retina-groups);
+// }
+@import "modules/utility";// Utilities
+
+// Site Styles
+//---------------------------------------------
+
+// Device definition（all and Mobile, Tablet, PC）
+$type: all tab pc;
+
+$tablet: "min-width: 541px";//#{$tablet}
+$desktop: "min-width: 769px";//#{$desktop}
+//$desktop: "min-width: 769px";//#{$desktop}
+
+/* =====================================================
+
+set All Devices and Smart Phone under 540px
+
+===================================================== */
+$type: all;
+@import "init";
+
+/* =====================================================
+
+set Tablet 541px to 769px
+
+===================================================== */
+@media print, screen and ($tablet) {// 541px to 768px
+  $type: tab;
+  @import "init";
+}
+
+/* =====================================================
+
+set DESKTOP 769px and more
+
+===================================================== */
+@media print, screen and ($desktop) {// 769px and more
+  $type: pc;
+  @import "init";
+}
+/* =====================================================
+
+set Print
+
+===================================================== */
+@media print {
+  section { display: block; page-break-before: always; }
+  pre code { page-break-after: always; }
+  @page {
+    margin-top: .4cm;
+    margin: .5cm;
+  }
+  p a, code, pre {
+    word-wrap: break-word;
+  }
+  pre a[href]:after {
+    content: "";
+  }
+  pre abbr[title]:after {
+    content: "";
+  }
+  pre.ir a:after,
+  pre a[href^="javascript:"]:after,
+  pre a[href^="#"]:after {
+    content: "";
+  }
+  .no_print { display:none; }
+}

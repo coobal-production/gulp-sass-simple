@@ -1,0 +1,30 @@
+/* ===========================================
+ Icon Font
+=========================================== */
+@font-face {
+  font-family: "icon";
+  src: url( "../fonts/icon.eot?c=1439871096025" );
+  src: url( "../fonts/icon.eot?#iefix?c=1439871096025" ) format( "eot" ),
+       url( "../fonts/icon.woff?c=1439871096025" ) format( "woff" ),
+       url( "../fonts/icon.ttf?c=1439871096025" ) format( "truetype" ),
+       url( "../fonts/icon.svg#icon?c=1439871096025" ) format( "svg" );
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: "icon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-next:before { content: "\F001" }
+.icon-pause:before { content: "\F002" }
+.icon-play:before { content: "\F003" }
+.icon-prev:before { content: "\F004" }

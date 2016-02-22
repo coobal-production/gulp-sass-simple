@@ -1,0 +1,52 @@
+// =====================================================
+//
+// 色設定
+//
+// =====================================================
+
+// サイトのベースカラー
+// ---------------------------------------------
+
+// body background value
+$body_bg_value: #FFF;
+
+// main color (base color)
+$main_color: #F90;
+
+// sub color
+$sub_color: #E6E2D9;
+
+// accent color
+$accent_color: #D2CBBB;
+
+// base text color
+$font_color: #333;
+
+
+// Link
+// ---------------------------------------------
+
+// base link color
+$link_color_primary: #00C;
+$link_color_hover: #F60;
+$link_color_active: #00F;
+$link_color_visited: #551A8B;
+$link_bg_color: #FFF0D9;
+
+$link_color_secondary: $accent_color;
+$link_color_tertiary: #0064FF;
+
+
+// form カラー
+// ---------------------------------------------
+
+// チェックボックス＆ラジオボタン
+$ui_input_bdr_color: #555;
+$ui_input_bg_color: #FFF;
+$ui_input_checked_color: $main_color;
+
+// セレクトメニュー
+$ui_select_bg_color: #FFF;
+$ui_select_bdr_color: #000;
+$ui_select_bdr_color_hover: $main_color;
+$ui_select_bdr_color_active: $main_color;

@@ -1,0 +1,84 @@
+/* =====================================================
+
+DEFAULT STYLES
+
+===================================================== */
+
+/* Default Styles
+--------------------------------------------- */
+
+* {
+  @include box;
+}
+
+// html
+html {
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  overflow-y: scroll;
+  @include fs($font_size);
+}
+
+// body
+body {
+  background: $body_bg_value;
+  color: $font_color;
+  line-height: $line_height;
+  font-family: $font_family;
+  word-wrap: break-all;
+  word-break: break-all;
+}
+
+// link
+a {
+  color: $link_color_primary;
+  &:hover {
+    color: $link_color_hover;
+    text-decoration: none;
+  }
+  &:visited {
+    color: $link_color_visited;
+  }
+  &:active {
+    color: $link_color_active;
+  }
+}
+
+a, button, input[type="button"], input[type="reset"], input[type="submit"] {
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  cursor: pointer;
+}
+
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+  -webkit-appearance: button;
+}
+
+// link
+img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+// form
+input[type="text"], input[type="email"],
+input[type="number"], input[type="tel"],
+input[type="password"], textarea {
+  padding: 4px 6px;
+  color: #808080;
+  @include fs(16);
+  border: solid 1px #CCC;
+  border-right: none;
+  border-bottom: none;
+  @include rds(3px);
+  @include bs(1px 1px 3px rgba(0, 0, 0, .2) inset);
+}
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 1px 3px 0 0;
+  margin-top: 0\9;
+}// input[type="radio"], input[type="checkbox"]
+label {
+  cursor: pointer;
+}// label
+
